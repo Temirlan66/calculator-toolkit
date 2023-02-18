@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { authActionTpyesv } from "../store/auth/Auth";
+import { authActions } from "../store/auth/authSlice";
 import classes from "./Auth.module.css";
 
 const Auth = () => {
@@ -19,13 +19,10 @@ const Auth = () => {
   const submitHnadler = (event) => {
     event.preventDefault();
     if (
-      formState.email === "tima@gmail.com" &&
+      formState.email === "test@gmail.com" &&
       formState.password === "123123"
     ) {
-      dispatch({
-        type: authActionTpyesv.LOG_IN,
-        payload: formState.email,
-      });
+      dispatch(authActions.LogIn(formState));
     }
   };
   return (
@@ -50,7 +47,7 @@ const Auth = () => {
               value={formState.password}
             />
           </div>
-          <button >Login</button>
+          <button>Login</button>
         </form>
       </section>
     </main>

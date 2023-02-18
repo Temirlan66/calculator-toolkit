@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { authActionTpyesv } from "../store/auth/Auth";
+import { authActions } from "../store/auth/authSlice";
 import classes from "./Header.module.css";
 
 const Header = () => {
@@ -19,7 +19,7 @@ const Header = () => {
             </li>
             <li>
               <button
-                onClick={() => dispatch({ type: authActionTpyesv.LOG_OUT })}
+                onClick={() => dispatch(authActions.LogOut())}
               >
                 Logout
               </button>
